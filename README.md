@@ -1,4 +1,32 @@
 # python-reader
-Tool for reading .txt files. Fun eBook reader.
+Tool for reading text and Markdown files. Fun eBook reader.
 
-Using books from sites like https://www.gutenberg.org/, the program can format and then read the book a chapter at a time. Using Matplotlib, the program can produce some graphs about word count and other unnecessary statistics. The program could have different user accounts and each user could have different permissions so they can only read certain books. The program could also read the books aloud.
+## About
+An open-source alternative to Kindle or Apple Books in Python.
+> If you didn't come here from High Seas check it out [here](https://highseas.hackclub.com/)!
+
+## Features
+- Formats & reads text and Markdown files (obviously)
+- Saves progress using Pickle files
+- Tells you the frequency of each word... because why not?
+
+## Install
+1. Clone the repo:
+   ```
+   git clone https://github.com/isobel-p/python-reader.git
+   cd python-reader
+   ```
+2. Create a virtual environment: `python -m venv venv`
+3. Activate the virtual environment  
+   - On Windows: `venv\Scripts\activate`  
+   - On macOS and Linux: `source venv/bin/activate`
+4. Install dependencies: `pip install -r requirements.txt`
+5. Run: `python main.py`
+  
+Or just download the raw files.  
+
+>[!IMPORTANT]
+>The program will not work without a .txt or .md file in the directory. Go to [The Gutenberg Project](gutenberg.org) or [Internet Archive](archive.org) to get started.
+
+## Demo
+[Here.](https://cloud-eo7c4i3td-hack-club-bot.vercel.app/0demo.mp4)
