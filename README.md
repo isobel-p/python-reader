@@ -10,6 +10,11 @@ An open-source alternative to Kindle or Apple Books in Python.
 - Saves progress using Pickle files
 - Tells you the frequency of each word... because why not?
 
+## Requirements
+Python >= 3.6  
+Modules come preinstalled with Python's standard library so no long setup is required, just download and use.  
+You will also need a text or Markdown file to read.
+
 ## Install
 1. Clone the repo:
    ```
@@ -20,7 +25,6 @@ An open-source alternative to Kindle or Apple Books in Python.
 3. Activate the virtual environment  
    - On Windows: `venv\Scripts\activate`  
    - On macOS and Linux: `source venv/bin/activate`
-4. Install dependencies: `pip install -r requirements.txt`
 5. Run: `python main.py`
   
 Or just download the raw files.  
