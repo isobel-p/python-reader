@@ -35,6 +35,7 @@ class PickleSaver:
 
 
 class Formatter:
+
     def find_books(self):
         books = []
         for file in os.listdir():
@@ -48,9 +49,7 @@ class Formatter:
             print("No books found.")
             return None, []
         for i in books:
-            print(
-                f'[{books.index(i)+1}] {re.sub(r".txt|.md", "", i)}'
-            )  # prints a list of valid books
+            print(f"[{books.index(i)+1}] {re.sub(r".txt|.md", "", i)}") # prints a list of valid books
         try:
             choice = int(input("Select a book by number: ")) - 1
             if choice < 0 or choice >= len(books):
@@ -64,7 +63,9 @@ class Formatter:
         except Exception as e:
             print(f"Sorry, there was an error: {e}")
         with open(title, "r") as file:
-            paragraphs = file.read().split("\n\n")  # splits the book into paragraphs
+            paragraphs = file.read().split(
+                "\n\n"
+            )  # splits the book into paragraphs
         if not os.path.exists(f"{title}_data.pkl"):
             with open(f"{title}_data.pkl", "wb") as file:
                 pickle.dump(
@@ -81,7 +82,10 @@ class Formatter:
                     words[word] += 1
                 else:
                     words[word] = 1
-        for word in words:
+        sorted_words = sorted(
+            words.items(), key=lambda item: item[1], reverse=True
+        )[:50]
+        for word in sorted_words:
             print(f"{word}: {words[word]}")
 
 
@@ -105,13 +109,15 @@ class Reader:
             input("You are about to begin reading.")
         else:
             input(f"You are about to continue from page {page}.")
-        print('Enter "f" to finish and the ENTER key to continue.\n\n')
+        print("Enter \"f\" to finish and the ENTER key to continue.\n\n")
         command = ""
         start = time.time()
         while command.lower() != "f":
             try:
                 os.system("cls")
-                print('Enter "f" to finish and the ENTER key to continue.\n\n')
+                print(
+                    "Enter \"f\" to finish and the ENTER key to continue.\n\n"
+                )
                 print(book[page])
                 page += 1
                 command = input("")
@@ -131,7 +137,6 @@ def main():
         """PYTHON READER
 [1] Read a book
 [2] Analyse a book
-...more options here  
 > """
     )
     reader = Reader()
@@ -152,7 +157,6 @@ def main():
             """PYTHON READER
 [1] Read a book
 [2] Analyse a book
-...more options here  
 > """
         )
 
